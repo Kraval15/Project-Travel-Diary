@@ -46,7 +46,7 @@ const CreatePrompt = () => {
       //a status code in the 200-299 range which means the api call was successful
       if (response.ok) {
         //we imported useRouter so we can use router.push to navigate to / page if our api call was successful
-        router.push("/");
+        return router.push("/");
       }
     } catch (error) {
       console.log(error);
