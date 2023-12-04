@@ -30,7 +30,7 @@ const Feed = () => {
   //on the first render, fetch all the current posts stored in the database using a get route
   //on the route below.
   const fetchPosts = async () => {
-    const response = await fetch("/api/prompt", { next: { revalidate: 10 } });
+    const response = await fetch("/api/prompt", { next: { revalidate: 1 } });
     const data = await response.json();
 
     setAllPosts(data);
