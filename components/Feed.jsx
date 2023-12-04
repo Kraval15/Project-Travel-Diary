@@ -30,7 +30,7 @@ const Feed = () => {
   //on the first render, fetch all the current posts stored in the database using a get route
   //on the route below.
   const fetchPosts = async () => {
-    const response = await fetch("/api/prompt", { next: { revalidate: 1 } });
+    const response = await fetch("/api/prompt");
     const data = await response.json();
 
     setAllPosts(data);
@@ -38,7 +38,7 @@ const Feed = () => {
 
   useEffect(() => {
     fetchPosts();
-  });
+  }, []);
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
